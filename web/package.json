@@ -1,6 +1,6 @@
 {
   "name": "@vmprint/web-fonts",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "description": "Browser-first FontManager for VMPrint. Loads font binaries from URLs, data URIs, and remote font catalogs with optional IndexedDB caching.",
   "author": "cosmiciron",
