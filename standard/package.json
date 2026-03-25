@@ -1,0 +1,50 @@
+{
+  "name": "@vmprint/standard-fonts",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Standard-font FontManager for VMPrint. Emits sentinel buffers for PDF standard fonts with zero binary font assets.",
+  "author": "cosmiciron",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cosmiciron/vmprint-font-managers.git",
+    "directory": "standard"
+  },
+  "bugs": {
+    "url": "https://github.com/cosmiciron/vmprint-font-managers/issues"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "tsx": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./config": {
+      "tsx": "./src/config.ts",
+      "types": "./dist/config.d.ts",
+      "import": "./dist/config.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@vmprint/contracts": "^1.0.0",
+    "@vmprint/engine": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "rimraf": "^6.1.3",
+    "tsx": "^4.20.5",
+    "typescript": "^5.7.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

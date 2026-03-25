@@ -1,0 +1,25 @@
+{
+  "name": "vmprint-font-managers-workspace",
+  "version": "1.0.0",
+  "description": "Font manager implementations for VMPrint",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cosmiciron/vmprint-font-managers.git"
+  },
+  "workspaces": [
+    "local",
+    "standard",
+    "web"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "clean": "npm run clean --workspaces",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "rimraf": "^6.1.3",
+    "tsx": "^4.20.5"
+  }
+}
