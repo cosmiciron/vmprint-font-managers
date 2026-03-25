@@ -2,8 +2,8 @@ import { FontConfig, FallbackFontSource, FontManager } from '@vmprint/contracts'
 import {
     createStandardFontSentinelBuffer,
     getStandardFontMetadataById,
-    StandardFontId
-} from '@vmprint/engine';
+    type StandardFontId
+} from './sentinel.js';
 import {
     normalizeFamilyKey,
     STANDARD_FONT_ALIASES,

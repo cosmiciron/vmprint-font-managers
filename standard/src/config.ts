@@ -1,5 +1,5 @@
 import type { FontConfig } from '@vmprint/contracts';
-import type { StandardFontId } from '@vmprint/engine';
+import type { StandardFontId } from './sentinel.js';
 
 export const STANDARD_FONT_SRC_PREFIX = 'standard-font://';
 

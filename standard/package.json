@@ -1,6 +1,6 @@
 {
   "name": "@vmprint/standard-fonts",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
   "description": "Standard-font FontManager for VMPrint. Emits sentinel buffers for PDF standard fonts with zero binary font assets.",
   "author": "cosmiciron",
@@ -35,8 +35,7 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@vmprint/contracts": "^1.0.0",
-    "@vmprint/engine": "^1.0.0"
+    "@vmprint/contracts": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^22.13.1",
