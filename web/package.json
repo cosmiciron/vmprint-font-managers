@@ -1,6 +1,6 @@
 {
   "name": "@vmprint/web-fonts",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
   "description": "Browser-first FontManager for VMPrint. Loads font binaries from URLs, data URIs, and remote font catalogs with optional IndexedDB caching.",
   "author": "cosmiciron",
@@ -13,20 +13,21 @@
   "bugs": {
     "url": "https://github.com/cosmiciron/vmprint-font-managers/issues"
   },
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "tsx": "./src/index.ts",
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "npm run clean && tsc",
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
     "clean": "rimraf dist"
   },
   "dependencies": {

@@ -1,6 +1,6 @@
 {
   "name": "@vmprint/standard-fonts",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "type": "module",
   "description": "Standard-font FontManager for VMPrint. Emits sentinel buffers for PDF standard fonts with zero binary font assets.",
   "author": "cosmiciron",
@@ -13,25 +13,26 @@
   "bugs": {
     "url": "https://github.com/cosmiciron/vmprint-font-managers/issues"
   },
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "tsx": "./src/index.ts",
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./config": {
-      "tsx": "./src/config.ts",
       "types": "./dist/config.d.ts",
-      "import": "./dist/config.js"
+      "import": "./dist/config.js",
+      "require": "./dist/config.cjs"
     }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "npm run clean && tsc",
+    "build": "tsup src/index.ts src/config.ts --format esm,cjs --dts --clean",
     "clean": "rimraf dist"
   },
   "dependencies": {
