@@ -1,6 +1,6 @@
 {
   "name": "vmprint-font-managers-workspace",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Font manager implementations for VMPrint",
   "private": true,
   "repository": {
