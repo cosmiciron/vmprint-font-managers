@@ -110,8 +110,8 @@ export const LOCAL_FONT_REGISTRY: FontConfig[] = [
     // Registered as fallback: true (same pattern as other CJK families) so the engine
     // can also use it as a supplementary serif face in mixed-script documents. The
     // unicodeRange mirrors Noto Sans SC so the two families cover the same CJK blocks.
-    { name: 'Noto Serif SC Regular', family: 'Noto Serif SC', weight: 400, style: 'normal', src: resolveLocalFontUrl('NotoSerifSC/NotoSerifSC-Regular.ttf'), unicodeRange: 'U+4E00-9FFF,U+3000-303F,U+FF00-FFEF', enabled: true, fallback: true },
-    { name: 'Noto Serif SC Bold', family: 'Noto Serif SC', weight: 700, style: 'normal', src: resolveLocalFontUrl('NotoSerifSC/NotoSerifSC-Bold.ttf'), unicodeRange: 'U+4E00-9FFF,U+3000-303F,U+FF00-FFEF', enabled: true, fallback: true },
+    { name: 'Noto Serif SC Regular', family: 'Noto Serif SC', weight: 400, style: 'normal', src: resolveLocalFontUrl('NotoSerifSC/NotoSerifSC-Regular.ttf'), unicodeRange: 'U+4E00-9FFF,U+3000-303F,U+FF00-FFEF', enabled: true, fallback: false },
+    { name: 'Noto Serif SC Bold', family: 'Noto Serif SC', weight: 700, style: 'normal', src: resolveLocalFontUrl('NotoSerifSC/NotoSerifSC-Bold.ttf'), unicodeRange: 'U+4E00-9FFF,U+3000-303F,U+FF00-FFEF', enabled: true, fallback: false },
     { name: 'Noto Sans SC Regular', family: 'Noto Sans SC', weight: 400, style: 'normal', src: resolveLocalFontUrl('NotoSansSC/NotoSansSC-Regular.ttf'), unicodeRange: 'U+4E00-9FFF,U+3000-303F,U+FF00-FFEF', enabled: true, fallback: true },
     { name: 'Noto Sans SC Bold', family: 'Noto Sans SC', weight: 700, style: 'normal', src: resolveLocalFontUrl('NotoSansSC/NotoSansSC-Bold.ttf'), unicodeRange: 'U+4E00-9FFF,U+3000-303F,U+FF00-FFEF', enabled: true, fallback: true },
     { name: 'Noto Sans JP Regular', family: 'Noto Sans JP', weight: 400, style: 'normal', src: resolveLocalFontUrl('NotoSansJP/NotoSansJP-Regular.ttf'), unicodeRange: 'U+3040-309F,U+30A0-30FF', enabled: true, fallback: true },

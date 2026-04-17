@@ -287,7 +287,7 @@
     "src": "assets/fonts/NotoSerifSC/NotoSerifSC-Regular.ttf",
     "unicodeRange": "U+4E00-9FFF,U+3000-303F,U+FF00-FFEF",
     "enabled": true,
-    "fallback": true
+    "fallback": false
   },
   {
     "name": "Noto Serif SC Bold",
@@ -297,7 +297,7 @@
     "src": "assets/fonts/NotoSerifSC/NotoSerifSC-Bold.ttf",
     "unicodeRange": "U+4E00-9FFF,U+3000-303F,U+FF00-FFEF",
     "enabled": true,
-    "fallback": true
+    "fallback": false
   },
   {
     "name": "Noto Sans SC Regular",
