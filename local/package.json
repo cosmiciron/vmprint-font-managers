@@ -43,7 +43,7 @@
     "assets"
   ],
   "scripts": {
-    "build": "tsup src/index.ts src/config.ts --format esm,cjs --dts --clean --shims",
+    "build": "tsup src/index.ts src/config.ts --format esm,cjs --dts --clean --shims && node scripts/generate-registry.mjs",
     "clean": "rimraf dist"
   },
   "dependencies": {

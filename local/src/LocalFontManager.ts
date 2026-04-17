@@ -9,12 +9,39 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export class LocalFontManager implements FontManager {
-    private readonly seedFonts: FontConfig[];
+    private seedFonts: FontConfig[];
     private readonly familyAliases: Record<string, string>;
 
     constructor(options: { fonts?: FontConfig[]; aliases?: Record<string, string> } = {}) {
         this.seedFonts = cloneFontRegistry(options.fonts || LOCAL_FONT_REGISTRY);
         this.familyAliases = { ...(options.aliases || LOCAL_FONT_ALIASES) };
+    }
+
+    static async create(options: { fonts?: FontConfig[]; aliases?: Record<string, string>; sync?: boolean } = {}): Promise<LocalFontManager> {
+        const manager = new LocalFontManager(options);
+        if (options.sync !== false) {
+            await manager.syncRegistryFromCDN();
+        }
+        return manager;
+    }
+
+    async syncRegistryFromCDN(): Promise<void> {
+        const registryUrl = 'https://cdn.jsdelivr.net/gh/cosmiciron/vmprint-font-managers@assets/assets/registry.json';
+        let cdnEntries: FontConfig[];
+        try {
+            const response = await fetch(registryUrl);
+            if (!response.ok) return;
+            cdnEntries = await response.json() as FontConfig[];
+        } catch {
+            return;
+        }
+        const existingNames = new Set(this.seedFonts.map((f) => f.name));
+        for (const entry of cdnEntries) {
+            if (!existingNames.has(entry.name)) {
+                this.seedFonts.push(entry);
+                existingNames.add(entry.name);
+            }
+        }
     }
 
     getFontRegistrySnapshot(): FontConfig[] {
@@ -133,7 +160,7 @@ export class LocalFontManager implements FontManager {
         }
 
         // Priority 2: Auto-download from CDN if missing
-        const repoBase = 'https://cdn.jsdelivr.net/gh/cosmiciron/vmprint@assets/font-managers/local/';
+        const repoBase = 'https://cdn.jsdelivr.net/gh/cosmiciron/vmprint-font-managers@assets/';
         const downloadUrl = `${repoBase}${src.replace(/\\/g, '/')}`;
         
         try {

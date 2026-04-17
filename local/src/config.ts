@@ -50,6 +50,7 @@ export const LOCAL_FONT_ALIASES: Record<string, string> = {
     'noto sans cjk kr': 'Noto Sans KR',
     'noto serif sc': 'Noto Serif SC',
     'noto serif cjk sc': 'Noto Serif SC',
+    'simsun serif': 'Noto Serif SC',
 
     // Other scripts
     'hebrew': 'Noto Sans Hebrew',
